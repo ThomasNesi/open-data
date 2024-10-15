@@ -129,16 +129,63 @@ namespace open_data
             }
         }
 
+        // Metodo filtro dati in base alla data selezionata
+        private void FiltroData(DateTime data)
+        {
+            if (dataTable == null || dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile da filtrare.");
+                return;
+            }
+
+            // Crea un nuovo DataTable per memorizzare i risultati filtrati
+            DataTable tabellafiltro = dataTable.Clone(); // Clona la struttura del DataTable originale
+
+            int contafiltro = 0; // Contatore di righe filtrate
+
+            // Scorri ogni riga del DataTable originale
+            foreach (DataRow riga in dataTable.Rows)
+            {
+                if (DateTime.TryParse(riga[0].ToString().Trim(), out DateTime dataRiga)) // Assumi che la data sia nella prima colonna
+                {
+                    if (dataRiga.Date == data.Date) // Confronta solo la parte della data
+                    {
+                        tabellafiltro.ImportRow(riga);
+                        contafiltro++; // Incrementa il contatore se la riga viene filtrata
+                    }
+                }
+            }
+
+            // Se sono state trovate righe corrispondenti, le mostriamo nel DataGridView
+            if (contafiltro > 0)
+            {
+                dataGridView1.DataSource = tabellafiltro;
+                MessageBox.Show($"Trovati {contafiltro} terremoti per la data specificata.");
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato per la data specificata.");
+            }
+        }
+
         private void buttonFilter_Click_1(object sender, EventArgs e)
         {
+            // Filtraggio per profondità
             if (int.TryParse(textBoxDepth.Text, out int profondità))
             {
-                FiltroProfondità(profondità); // Applica il filtro per la profondità
+                FiltroProfondità(profondità);
             }
             else
             {
                 MessageBox.Show("Inserisci un valore numerico valido per la profondità.");
             }
+        }
+
+        private void data_btn_Click(object sender, EventArgs e)
+        {
+            // Filtraggio per data
+            DateTime selezionadata = dateTimePicker1.Value;
+            FiltroData(selezionadata);
         }
     }
 }
