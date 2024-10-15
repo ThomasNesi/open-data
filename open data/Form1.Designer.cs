@@ -38,6 +38,9 @@
             this.dateTimePicker1 = new System.Windows.Forms.DateTimePicker();
             this.data_btn = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
+            this.magnitudo_btn = new System.Windows.Forms.Button();
+            this.magnitudo_box = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -141,11 +144,41 @@
             this.label4.TabIndex = 9;
             this.label4.Text = "data";
             // 
+            // magnitudo_btn
+            // 
+            this.magnitudo_btn.Location = new System.Drawing.Point(718, 265);
+            this.magnitudo_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.magnitudo_btn.Name = "magnitudo_btn";
+            this.magnitudo_btn.Size = new System.Drawing.Size(75, 23);
+            this.magnitudo_btn.TabIndex = 12;
+            this.magnitudo_btn.Text = "filtra";
+            this.magnitudo_btn.UseVisualStyleBackColor = true;
+            this.magnitudo_btn.Click += new System.EventHandler(this.magnitudo_btn_Click);
+            // 
+            // magnitudo_box
+            // 
+            this.magnitudo_box.Location = new System.Drawing.Point(718, 226);
+            this.magnitudo_box.Name = "magnitudo_box";
+            this.magnitudo_box.Size = new System.Drawing.Size(100, 22);
+            this.magnitudo_box.TabIndex = 11;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(715, 198);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 10;
+            this.label5.Text = "magnitudo";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1085, 564);
+            this.Controls.Add(this.magnitudo_btn);
+            this.Controls.Add(this.magnitudo_box);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.data_btn);
             this.Controls.Add(this.dateTimePicker1);
@@ -177,6 +210,9 @@
         private System.Windows.Forms.DateTimePicker dateTimePicker1;
         private System.Windows.Forms.Button data_btn;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Button magnitudo_btn;
+        private System.Windows.Forms.TextBox magnitudo_box;
+        private System.Windows.Forms.Label label5;
     }
 }
 

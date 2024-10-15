@@ -168,6 +168,46 @@ namespace open_data
             }
         }
 
+        // Metodo per filtrare i dati in base alla magnitudo inserita
+        private void FiltroMagnitudo(double magnitudo)
+        {
+            if (dataTable == null || dataTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile da filtrare.");
+                return;
+            }
+
+            // Crea un nuovo DataTable per memorizzare i risultati filtrati
+            DataTable tabellafiltro = dataTable.Clone(); // Clona la struttura del DataTable originale
+
+            int contafiltro = 0; // Contatore di righe filtrate
+
+            // Scorri ogni riga del DataTable originale
+            foreach (DataRow row in dataTable.Rows)
+            {
+                string magnitudoString = row[1].ToString().Trim(); // Assumi che la magnitudo sia nella seconda colonna
+                if (double.TryParse(magnitudoString, out double magnitudoRiga))
+                {
+                    if (magnitudoRiga == magnitudo)
+                    {
+                        tabellafiltro.ImportRow(row);
+                        contafiltro++; // Incrementa il contatore se la riga viene filtrata
+                    }
+                }
+            }
+
+            // Se sono state trovate righe corrispondenti, le mostriamo nel DataGridView
+            if (contafiltro > 0)
+            {
+                dataGridView1.DataSource = tabellafiltro;
+                MessageBox.Show($"Trovati {contafiltro} terremoti con la magnitudo specificata.");
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con la magnitudo specificata.");
+            }
+        }
+
         private void buttonFilter_Click_1(object sender, EventArgs e)
         {
             // Filtraggio per profondità
@@ -186,6 +226,19 @@ namespace open_data
             // Filtraggio per data
             DateTime selezionadata = dateTimePicker1.Value;
             FiltroData(selezionadata);
+        }
+
+        private void magnitudo_btn_Click(object sender, EventArgs e)
+        {
+            // Filtraggio per magnitudo
+            if (double.TryParse(magnitudo_box.Text, out double magnitudo))
+            {
+                FiltroMagnitudo(magnitudo);
+            }
+            else
+            {
+                MessageBox.Show("Inserisci un valore numerico valido per la magnitudo.");
+            }
         }
     }
 }
