@@ -21,30 +21,61 @@ namespace open_data
         private void button_Click_Click_1(object sender, EventArgs e)
         {
             // Percorso del file CSV
-            string filePath = "opendata.csv";
+            string filePath = "opendata.csv"; // Assicurati che il file si trovi nella stessa cartella dell'eseguibile
             LoadCsvToDataGridView(filePath);
         }
 
         private void LoadCsvToDataGridView(string filePath)
         {
-            // Crea una tabella per i dati
             DataTable dataTable = new DataTable();
-            using (StreamReader reader = new StreamReader(filePath))
+
+            try
             {
-                // Leggi la prima riga (intestazioni)
-                string[] headers = reader.ReadLine().Split(',');
-                foreach (string header in headers)
+                using (StreamReader reader = new StreamReader(filePath))
                 {
-                    dataTable.Columns.Add(header); // Aggiungi le colonne alla tabella
+                    // Leggi la prima riga (intestazioni)
+                    string headerLine = reader.ReadLine();
+                    if (headerLine == null)
+                    {
+                        MessageBox.Show("Il file CSV è vuoto.");
+                        return;
+                    }
+
+                    string[] headers = headerLine.Split(',');
+
+                    // Aggiungi le colonne alla tabella
+                    foreach (string header in headers)
+                    {
+                        dataTable.Columns.Add(header.Trim());
+                    }
+
+                    // Leggi le righe successive
+                    while (!reader.EndOfStream)
+                    {
+                        string line = reader.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(line)) // Controlla righe vuote
+                        {
+                            string[] rows = line.Split(',');
+                            if (rows.Length == headers.Length) // Controlla righe malformate
+                            {
+                                dataTable.Rows.Add(rows);
+                            }
+                        }
+                    }
                 }
-                while (!reader.EndOfStream)
-                {
-                    // Leggi le righe successive (dati)
-                    string[] rows = reader.ReadLine().Split(',');
-                    dataTable.Rows.Add(rows); // Aggiungi le righe alla tabella
-                }
+
+                // Mostra la tabella nel DataGridView
+                dataGridView1.DataSource = dataTable;
             }
-            dataGridView1.DataSource = dataTable; // Mostra la tabella nel DataGridView
+            catch (Exception ex)
+            {
+                MessageBox.Show("Errore durante il caricamento del file: " + ex.Message);
+            }
+        }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            // Eventuale logica per la gestione del click sulle celle
         }
     }
 }
