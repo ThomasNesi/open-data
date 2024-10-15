@@ -20,23 +20,22 @@ namespace open_data
             InitializeComponent();
         }
 
-        // Metodo chiamato quando si clicca sul pulsante di caricamento
         private void button_Click_Click_1(object sender, EventArgs e)
         {
-            string filePath = "opendata1.csv"; // Assicurati che il file si trovi nella giusta cartella
+            string filePath = "opendata1.csv";
 
-            // Controlla se il file esiste
+            // Controllo se il file esiste
             if (!File.Exists(filePath))
             {
                 MessageBox.Show($"Il file {filePath} non esiste.");
                 return;
             }
 
-            LoadCsvToDataGridView(filePath); // Carica il file CSV
+            CaricaFile(filePath); // Carica il file CSV
         }
 
         // Metodo per caricare il file CSV nel DataTable e visualizzarlo nel DataGridView
-        private void LoadCsvToDataGridView(string filePath)
+        private void CaricaFile(string filePath)
         {
             // Inizializza il DataTable
             dataTable = new DataTable();
@@ -59,26 +58,26 @@ namespace open_data
                         dataTable.Columns.Add(header.Trim());
                     }
 
-                    // Contatore di righe per il debug
-                    int rowCount = 0;
+                    // Contatore di righe
+                    int contarighe = 0;
 
                     while (!reader.EndOfStream)
                     {
                         string line = reader.ReadLine();
                         if (!string.IsNullOrWhiteSpace(line))
                         {
-                            string[] rows = line.Split(',');
+                            string[] righe = line.Split(',');
 
-                            if (rows.Length == headers.Length)
+                            if (righe.Length == headers.Length)
                             {
-                                dataTable.Rows.Add(rows);
-                                rowCount++; // Incrementa il contatore di righe
+                                dataTable.Rows.Add(righe);
+                                contarighe++; // Incrementa il contatore di righe
                             }
                         }
                     }
 
-                    // Debug: Visualizza quante righe sono state caricate
-                    MessageBox.Show($"Righe caricate: {rowCount}");
+                    // Visualizza quante righe sono state caricate
+                    MessageBox.Show($"Righe caricate: {contarighe}");
                 }
 
                 // Mostra i dati caricati nel DataGridView
@@ -91,7 +90,7 @@ namespace open_data
         }
 
         // Metodo per filtrare i dati in base alla profondità inserita
-        private void FilterByDepth(decimal depth)
+        private void FiltroProfondità(int profondità)
         {
             if (dataTable == null || dataTable.Rows.Count == 0)
             {
@@ -100,29 +99,29 @@ namespace open_data
             }
 
             // Crea un nuovo DataTable per memorizzare i risultati filtrati
-            DataTable filteredTable = dataTable.Clone(); // Clona la struttura del DataTable originale
+            DataTable tabellafiltro = dataTable.Clone(); // Clona la struttura del DataTable originale
 
-            int filteredCount = 0; // Contatore di righe filtrate
+            int contafiltro = 0; // Contatore di righe filtrate
 
-            // Scorri manualmente ogni riga del DataTable originale
+            // Scorri ogni riga del DataTable originale
             foreach (DataRow row in dataTable.Rows)
             {
-                string depthString = row[3].ToString().Trim(); // Assumi che la profondità sia nella quarta colonna (indice 3)
-                if (decimal.TryParse(depthString, out decimal rowDepth))
+                string depthString = row[3].ToString().Trim(); // Assumi che la profondità sia nella quarta colonna 
+                if (int.TryParse(depthString, out int profonditàriga))
                 {
-                    if (rowDepth == depth)
+                    if (profonditàriga == profondità)
                     {
-                        filteredTable.ImportRow(row);
-                        filteredCount++; // Incrementa il contatore se la riga viene filtrata
+                        tabellafiltro.ImportRow(row);
+                        contafiltro++; // Incrementa il contatore se la riga viene filtrata
                     }
                 }
             }
 
             // Se sono state trovate righe corrispondenti, le mostriamo nel DataGridView
-            if (filteredCount > 0)
+            if (contafiltro > 0)
             {
-                dataGridView1.DataSource = filteredTable;
-                MessageBox.Show($"Trovati {filteredCount} terremoti con la profondità specificata.");
+                dataGridView1.DataSource = tabellafiltro;
+                MessageBox.Show($"Trovati {contafiltro} terremoti con la profondità specificata.");
             }
             else
             {
@@ -130,13 +129,11 @@ namespace open_data
             }
         }
 
-        // Metodo chiamato quando si clicca sul pulsante di filtro
-       
         private void buttonFilter_Click_1(object sender, EventArgs e)
         {
-            if (decimal.TryParse(textBoxDepth.Text, out decimal depth))
+            if (int.TryParse(textBoxDepth.Text, out int profondità))
             {
-                FilterByDepth(depth); // Applica il filtro per la profondità
+                FiltroProfondità(profondità); // Applica il filtro per la profondità
             }
             else
             {
