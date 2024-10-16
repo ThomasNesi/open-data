@@ -240,6 +240,11 @@ namespace open_data
                 MessageBox.Show("Inserisci un valore numerico valido per la magnitudo.");
             }
         }
+
+        private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }
 
