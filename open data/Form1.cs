@@ -169,7 +169,7 @@ namespace open_data
         }
 
         // Metodo per filtrare i dati in base alla magnitudo inserita
-        private void FiltroMagnitudo(double magnitudo)
+        private void FiltroMagnitudo(string magnitudo)
         {
             if (dataTable == null || dataTable.Rows.Count == 0)
             {
@@ -186,13 +186,10 @@ namespace open_data
             foreach (DataRow row in dataTable.Rows)
             {
                 string magnitudoString = row[1].ToString().Trim(); // Assumi che la magnitudo sia nella seconda colonna
-                if (double.TryParse(magnitudoString, out double magnitudoRiga))
+                if (magnitudoString.Equals(magnitudo))
                 {
-                    if (magnitudoRiga == magnitudo)
-                    {
-                        tabellafiltro.ImportRow(row);
-                        contafiltro++; // Incrementa il contatore se la riga viene filtrata
-                    }
+                    tabellafiltro.ImportRow(row);
+                    contafiltro++; // Incrementa il contatore se la riga viene filtrata
                 }
             }
 
@@ -231,17 +228,24 @@ namespace open_data
         private void magnitudo_btn_Click(object sender, EventArgs e)
         {
             // Filtraggio per magnitudo
-            if (double.TryParse(magnitudo_box.Text, out double magnitudo))
+            string magnitudo = magnitudo_box.Text.Trim(); // Ottieni il valore come stringa
+
+            if (!string.IsNullOrEmpty(magnitudo))
             {
                 FiltroMagnitudo(magnitudo);
             }
             else
             {
-                MessageBox.Show("Inserisci un valore numerico valido per la magnitudo.");
+                MessageBox.Show("Inserisci un valore valido per la magnitudo.");
             }
         }
 
         private void dataGridView1_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
         {
 
         }

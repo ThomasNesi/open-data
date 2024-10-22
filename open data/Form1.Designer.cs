@@ -41,6 +41,7 @@
             this.magnitudo_btn = new System.Windows.Forms.Button();
             this.magnitudo_box = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.label6 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -48,19 +49,19 @@
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(46, 68);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(476, 380);
+            this.dataGridView1.Size = new System.Drawing.Size(661, 469);
             this.dataGridView1.TabIndex = 0;
             this.dataGridView1.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dataGridView1_CellContentClick);
             // 
             // button_Click
             // 
             this.button_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Click.Location = new System.Drawing.Point(538, 394);
-            this.button_Click.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.button_Click.Location = new System.Drawing.Point(793, 483);
+            this.button_Click.Margin = new System.Windows.Forms.Padding(2);
             this.button_Click.Name = "button_Click";
             this.button_Click.Size = new System.Drawing.Size(80, 54);
             this.button_Click.TabIndex = 1;
@@ -71,7 +72,7 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(716, 61);
+            this.label1.Location = new System.Drawing.Point(975, 58);
             this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(54, 13);
@@ -80,16 +81,16 @@
             // 
             // textBoxDepth
             // 
-            this.textBoxDepth.Location = new System.Drawing.Point(718, 84);
-            this.textBoxDepth.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBoxDepth.Location = new System.Drawing.Point(977, 81);
+            this.textBoxDepth.Margin = new System.Windows.Forms.Padding(2);
             this.textBoxDepth.Name = "textBoxDepth";
             this.textBoxDepth.Size = new System.Drawing.Size(76, 20);
             this.textBoxDepth.TabIndex = 3;
             // 
             // buttonFilter
             // 
-            this.buttonFilter.Location = new System.Drawing.Point(718, 115);
-            this.buttonFilter.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.buttonFilter.Location = new System.Drawing.Point(977, 112);
+            this.buttonFilter.Margin = new System.Windows.Forms.Padding(2);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(56, 19);
             this.buttonFilter.TabIndex = 4;
@@ -115,7 +116,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(620, 19);
+            this.label3.Location = new System.Drawing.Point(854, 9);
             this.label3.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(77, 26);
@@ -124,16 +125,19 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(538, 84);
-            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dateTimePicker1.Location = new System.Drawing.Point(797, 81);
+            this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(2);
+            this.dateTimePicker1.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
+            this.dateTimePicker1.MinDate = new System.DateTime(1985, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
             this.dateTimePicker1.Size = new System.Drawing.Size(156, 20);
             this.dateTimePicker1.TabIndex = 7;
+            this.dateTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             // 
             // data_btn
             // 
-            this.data_btn.Location = new System.Drawing.Point(538, 115);
-            this.data_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.data_btn.Location = new System.Drawing.Point(797, 112);
+            this.data_btn.Margin = new System.Windows.Forms.Padding(2);
             this.data_btn.Name = "data_btn";
             this.data_btn.Size = new System.Drawing.Size(56, 19);
             this.data_btn.TabIndex = 8;
@@ -144,7 +148,7 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(536, 61);
+            this.label4.Location = new System.Drawing.Point(795, 58);
             this.label4.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(28, 13);
@@ -153,8 +157,8 @@
             // 
             // magnitudo_btn
             // 
-            this.magnitudo_btn.Location = new System.Drawing.Point(538, 215);
-            this.magnitudo_btn.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.magnitudo_btn.Location = new System.Drawing.Point(797, 212);
+            this.magnitudo_btn.Margin = new System.Windows.Forms.Padding(2);
             this.magnitudo_btn.Name = "magnitudo_btn";
             this.magnitudo_btn.Size = new System.Drawing.Size(56, 19);
             this.magnitudo_btn.TabIndex = 12;
@@ -164,8 +168,8 @@
             // 
             // magnitudo_box
             // 
-            this.magnitudo_box.Location = new System.Drawing.Point(538, 184);
-            this.magnitudo_box.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.magnitudo_box.Location = new System.Drawing.Point(797, 181);
+            this.magnitudo_box.Margin = new System.Windows.Forms.Padding(2);
             this.magnitudo_box.Name = "magnitudo_box";
             this.magnitudo_box.Size = new System.Drawing.Size(76, 20);
             this.magnitudo_box.TabIndex = 11;
@@ -173,18 +177,28 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(536, 161);
+            this.label5.Location = new System.Drawing.Point(795, 158);
             this.label5.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(56, 13);
             this.label5.TabIndex = 10;
             this.label5.Text = "magnitudo";
             // 
+            // label6
+            // 
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(790, 457);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(75, 13);
+            this.label6.TabIndex = 13;
+            this.label6.Text = "Per aprire il file";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(814, 458);
+            this.ClientSize = new System.Drawing.Size(1107, 606);
+            this.Controls.Add(this.label6);
             this.Controls.Add(this.magnitudo_btn);
             this.Controls.Add(this.magnitudo_box);
             this.Controls.Add(this.label5);
@@ -198,9 +212,10 @@
             this.Controls.Add(this.label1);
             this.Controls.Add(this.button_Click);
             this.Controls.Add(this.dataGridView1);
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Form1";
             this.Text = "Form1";
+            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -222,6 +237,7 @@
         private System.Windows.Forms.Button magnitudo_btn;
         private System.Windows.Forms.TextBox magnitudo_box;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.Label label6;
     }
 }
 
