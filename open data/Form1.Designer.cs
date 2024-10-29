@@ -269,6 +269,7 @@
             this.chartMagnitudo.Location = new System.Drawing.Point(967, 84);
             this.chartMagnitudo.Name = "chartMagnitudo";
             series1.ChartArea = "ChartArea1";
+            series1.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             series1.Legend = "Legend1";
             series1.Name = "Series1";
             this.chartMagnitudo.Series.Add(series1);
@@ -288,6 +289,7 @@
             this.chartProfondita.Location = new System.Drawing.Point(967, 499);
             this.chartProfondita.Name = "chartProfondita";
             series2.ChartArea = "ChartArea1";
+            series2.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
             series2.Legend = "Legend1";
             series2.Name = "Series1";
             this.chartProfondita.Series.Add(series2);
