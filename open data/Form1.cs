@@ -33,6 +33,7 @@ namespace open_data
             label5.Visible = false;
             textBoxMagnitudo.Visible = false;
             buttonMagnitudoFilter.Visible = false;
+            dataGridView1.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -66,6 +67,7 @@ namespace open_data
         private void button_Click_Click_1(object sender, EventArgs e)
         {
             string filePath = "opendata1.csv";
+            dataGridView1.Visible = !dataGridView1.Visible;
 
             // Controllo se il file esiste
             if (!File.Exists(filePath))
@@ -211,6 +213,7 @@ namespace open_data
             {
                 MessageBox.Show("Inserisci un valore valido per la profondità.");
             }
+            textBoxDepth.Clear();
         }
 
         private void data_btn_Click(object sender, EventArgs e)
@@ -265,6 +268,7 @@ namespace open_data
             {
                 MessageBox.Show("Inserisci una parola per la zona.");
             }
+            textBoxZona.Clear();
         }
 
         // Funzione di filtro magnitudo
@@ -299,7 +303,7 @@ namespace open_data
             {
                 filteredTable = nuovoFiltro;
                 dataGridView1.DataSource = filteredTable;
-                MessageBox.Show($"Trovati {contafiltro} terremoti con magnitudo {magnitudoTarget}.");
+                MessageBox.Show($"Trovati {contafiltro} terremoti con questo magnitudo.");
             }
             else
             {
@@ -318,7 +322,69 @@ namespace open_data
             {
                 MessageBox.Show("Inserisci un valore valido per la magnitudo.");
             }
+            textBoxMagnitudo.Clear();
         }
+
+        // Funzione per visualizzare i grafici
+        private void MostraGrafici()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile per visualizzare i grafici.");
+                return;
+            }
+
+            chartMagnitudo.Series.Clear();
+            chartProfondita.Series.Clear();
+
+            Series serieMagnitudo = new Series("Magnitudo")
+            {
+                ChartType = SeriesChartType.Column
+            };
+
+            Series serieProfondita = new Series("Profondità")
+            {
+                ChartType = SeriesChartType.Column
+            };
+
+            int indice = 1;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string magnitudoString = riga[1].ToString().Trim();
+                string magnitudoNumerico = new string(magnitudoString.Where(char.IsDigit).ToArray());
+
+                if (double.TryParse(magnitudoNumerico, out double magnitudo))
+                {
+                    serieMagnitudo.Points.AddXY(indice, magnitudo);
+                }
+
+                if (double.TryParse(riga[3].ToString().Trim(), out double profondita))
+                {
+                    serieProfondita.Points.AddXY(indice, profondita);
+                }
+
+                indice++;
+            }
+
+            chartMagnitudo.Series.Add(serieMagnitudo);
+            chartProfondita.Series.Add(serieProfondita);
+
+            chartMagnitudo.ChartAreas[0].AxisX.Title = "Indice Terremoto";
+            chartMagnitudo.ChartAreas[0].AxisY.Title = "Magnitudo";
+            chartProfondita.ChartAreas[0].AxisX.Title = "Indice Terremoto";
+            chartProfondita.ChartAreas[0].AxisY.Title = "Profondità (km)";
+
+            chartMagnitudo.Visible = true;
+            chartProfondita.Visible = true;
+        }
+
+        // Gestore per il pulsante per visualizzare i grafici
+        private void buttonMostraGrafici_Click_1(object sender, EventArgs e)
+        {
+            MostraGrafici();
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {

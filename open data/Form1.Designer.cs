@@ -28,6 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_Click = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -45,7 +51,14 @@
             this.buttonMagnitudoFilter = new System.Windows.Forms.Button();
             this.textBoxMagnitudo = new System.Windows.Forms.TextBox();
             this.label5 = new System.Windows.Forms.Label();
+            this.chartMagnitudo = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.chartProfondita = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.profondità = new System.Windows.Forms.Label();
+            this.label8 = new System.Windows.Forms.Label();
+            this.buttonMostraGrafici = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMagnitudo)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProfondita)).BeginInit();
             this.SuspendLayout();
             // 
             // dataGridView1
@@ -56,16 +69,17 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(898, 323);
+            this.dataGridView1.Size = new System.Drawing.Size(885, 361);
             this.dataGridView1.TabIndex = 0;
             // 
             // button_Click
             // 
-            this.button_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button_Click.Location = new System.Drawing.Point(772, 467);
+            this.button_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button_Click.ForeColor = System.Drawing.Color.ForestGreen;
+            this.button_Click.Location = new System.Drawing.Point(554, 478);
             this.button_Click.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Click.Name = "button_Click";
-            this.button_Click.Size = new System.Drawing.Size(107, 66);
+            this.button_Click.Size = new System.Drawing.Size(107, 59);
             this.button_Click.TabIndex = 1;
             this.button_Click.Text = "mostra";
             this.button_Click.UseVisualStyleBackColor = true;
@@ -74,15 +88,17 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(299, 512);
+            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label1.Location = new System.Drawing.Point(299, 555);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(67, 16);
+            this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 2;
             this.label1.Text = "profondità";
             // 
             // textBoxDepth
             // 
-            this.textBoxDepth.Location = new System.Drawing.Point(302, 541);
+            this.textBoxDepth.Location = new System.Drawing.Point(302, 584);
             this.textBoxDepth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDepth.Name = "textBoxDepth";
             this.textBoxDepth.Size = new System.Drawing.Size(100, 22);
@@ -90,7 +106,9 @@
             // 
             // buttonFilter
             // 
-            this.buttonFilter.Location = new System.Drawing.Point(302, 579);
+            this.buttonFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonFilter.ForeColor = System.Drawing.Color.ForestGreen;
+            this.buttonFilter.Location = new System.Drawing.Point(302, 622);
             this.buttonFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(75, 23);
@@ -114,18 +132,24 @@
             // 
             // dateTimePicker1
             // 
-            this.dateTimePicker1.Location = new System.Drawing.Point(62, 541);
+            this.dateTimePicker1.CalendarForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.ForestGreen;
+            this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dateTimePicker1.Location = new System.Drawing.Point(59, 584);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1985, 1, 1, 0, 0, 0, 0);
             this.dateTimePicker1.Name = "dateTimePicker1";
-            this.dateTimePicker1.Size = new System.Drawing.Size(207, 22);
+            this.dateTimePicker1.Size = new System.Drawing.Size(224, 22);
             this.dateTimePicker1.TabIndex = 7;
             this.dateTimePicker1.Value = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             // 
             // data_btn
             // 
-            this.data_btn.Location = new System.Drawing.Point(62, 579);
+            this.data_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.data_btn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.data_btn.Location = new System.Drawing.Point(62, 622);
             this.data_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.data_btn.Name = "data_btn";
             this.data_btn.Size = new System.Drawing.Size(75, 23);
@@ -137,27 +161,33 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(59, 512);
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label4.Location = new System.Drawing.Point(59, 555);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(34, 16);
+            this.label4.Size = new System.Drawing.Size(38, 16);
             this.label4.TabIndex = 9;
             this.label4.Text = "data";
             // 
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(768, 435);
+            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label6.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label6.Location = new System.Drawing.Point(668, 487);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(191, 16);
+            this.label6.Size = new System.Drawing.Size(119, 32);
             this.label6.TabIndex = 13;
-            this.label6.Text = "Per aprire il file e resettare il file";
+            this.label6.Text = "Per aprire il file \r\ne resettare il file";
             // 
             // btnMostraFiltri_Click
             // 
-            this.btnMostraFiltri_Click.Location = new System.Drawing.Point(61, 435);
+            this.btnMostraFiltri_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMostraFiltri_Click.ForeColor = System.Drawing.Color.ForestGreen;
+            this.btnMostraFiltri_Click.Location = new System.Drawing.Point(61, 478);
             this.btnMostraFiltri_Click.Name = "btnMostraFiltri_Click";
-            this.btnMostraFiltri_Click.Size = new System.Drawing.Size(89, 59);
+            this.btnMostraFiltri_Click.Size = new System.Drawing.Size(341, 59);
             this.btnMostraFiltri_Click.TabIndex = 14;
             this.btnMostraFiltri_Click.Text = "Filtri";
             this.btnMostraFiltri_Click.UseVisualStyleBackColor = true;
@@ -165,7 +195,9 @@
             // 
             // buttonZonaFilter
             // 
-            this.buttonZonaFilter.Location = new System.Drawing.Point(62, 700);
+            this.buttonZonaFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonZonaFilter.ForeColor = System.Drawing.Color.ForestGreen;
+            this.buttonZonaFilter.Location = new System.Drawing.Point(62, 743);
             this.buttonZonaFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonZonaFilter.Name = "buttonZonaFilter";
             this.buttonZonaFilter.Size = new System.Drawing.Size(75, 23);
@@ -176,7 +208,7 @@
             // 
             // textBoxZona
             // 
-            this.textBoxZona.Location = new System.Drawing.Point(62, 662);
+            this.textBoxZona.Location = new System.Drawing.Point(62, 705);
             this.textBoxZona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxZona.Name = "textBoxZona";
             this.textBoxZona.Size = new System.Drawing.Size(100, 22);
@@ -185,15 +217,19 @@
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(59, 633);
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label3.Location = new System.Drawing.Point(59, 676);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(36, 16);
+            this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 15;
             this.label3.Text = "zona";
             // 
             // buttonMagnitudoFilter
             // 
-            this.buttonMagnitudoFilter.Location = new System.Drawing.Point(302, 700);
+            this.buttonMagnitudoFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMagnitudoFilter.ForeColor = System.Drawing.Color.ForestGreen;
+            this.buttonMagnitudoFilter.Location = new System.Drawing.Point(302, 743);
             this.buttonMagnitudoFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMagnitudoFilter.Name = "buttonMagnitudoFilter";
             this.buttonMagnitudoFilter.Size = new System.Drawing.Size(75, 23);
@@ -204,7 +240,7 @@
             // 
             // textBoxMagnitudo
             // 
-            this.textBoxMagnitudo.Location = new System.Drawing.Point(302, 662);
+            this.textBoxMagnitudo.Location = new System.Drawing.Point(302, 705);
             this.textBoxMagnitudo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMagnitudo.Name = "textBoxMagnitudo";
             this.textBoxMagnitudo.Size = new System.Drawing.Size(100, 22);
@@ -213,18 +249,99 @@
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(299, 633);
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label5.Location = new System.Drawing.Point(299, 676);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 18;
             this.label5.Text = "magnitudo";
+            // 
+            // chartMagnitudo
+            // 
+            this.chartMagnitudo.BorderlineColor = System.Drawing.Color.LawnGreen;
+            this.chartMagnitudo.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartMagnitudo.BorderlineWidth = 3;
+            chartArea7.Name = "ChartArea1";
+            this.chartMagnitudo.ChartAreas.Add(chartArea7);
+            legend7.Name = "Legend1";
+            this.chartMagnitudo.Legends.Add(legend7);
+            this.chartMagnitudo.Location = new System.Drawing.Point(1001, 84);
+            this.chartMagnitudo.Name = "chartMagnitudo";
+            series7.ChartArea = "ChartArea1";
+            series7.Legend = "Legend1";
+            series7.Name = "Series1";
+            this.chartMagnitudo.Series.Add(series7);
+            this.chartMagnitudo.Size = new System.Drawing.Size(585, 323);
+            this.chartMagnitudo.TabIndex = 21;
+            this.chartMagnitudo.Text = "chart1";
+            // 
+            // chartProfondita
+            // 
+            this.chartProfondita.BorderlineColor = System.Drawing.Color.LawnGreen;
+            this.chartProfondita.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
+            this.chartProfondita.BorderlineWidth = 3;
+            chartArea8.Name = "ChartArea1";
+            this.chartProfondita.ChartAreas.Add(chartArea8);
+            legend8.Name = "Legend1";
+            this.chartProfondita.Legends.Add(legend8);
+            this.chartProfondita.Location = new System.Drawing.Point(1001, 499);
+            this.chartProfondita.Name = "chartProfondita";
+            series8.ChartArea = "ChartArea1";
+            series8.Legend = "Legend1";
+            series8.Name = "Series1";
+            this.chartProfondita.Series.Add(series8);
+            this.chartProfondita.Size = new System.Drawing.Size(585, 323);
+            this.chartProfondita.TabIndex = 22;
+            this.chartProfondita.Text = "chart2";
+            // 
+            // profondità
+            // 
+            this.profondità.AutoSize = true;
+            this.profondità.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.profondità.ForeColor = System.Drawing.Color.ForestGreen;
+            this.profondità.Location = new System.Drawing.Point(1018, 478);
+            this.profondità.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.profondità.Name = "profondità";
+            this.profondità.Size = new System.Drawing.Size(77, 16);
+            this.profondità.TabIndex = 23;
+            this.profondità.Text = "profondità";
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label8.Location = new System.Drawing.Point(1018, 65);
+            this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(79, 16);
+            this.label8.TabIndex = 24;
+            this.label8.Text = "magnitudo";
+            // 
+            // buttonMostraGrafici
+            // 
+            this.buttonMostraGrafici.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.buttonMostraGrafici.ForeColor = System.Drawing.Color.ForestGreen;
+            this.buttonMostraGrafici.Location = new System.Drawing.Point(554, 633);
+            this.buttonMostraGrafici.Name = "buttonMostraGrafici";
+            this.buttonMostraGrafici.Size = new System.Drawing.Size(107, 59);
+            this.buttonMostraGrafici.TabIndex = 25;
+            this.buttonMostraGrafici.Text = "grafici";
+            this.buttonMostraGrafici.UseVisualStyleBackColor = true;
+            this.buttonMostraGrafici.Click += new System.EventHandler(this.buttonMostraGrafici_Click_1);
             // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::open_data.Properties.Resources.Immagine_2024_10_29_164639;
-            this.ClientSize = new System.Drawing.Size(1555, 802);
+            this.ClientSize = new System.Drawing.Size(1628, 850);
+            this.Controls.Add(this.buttonMostraGrafici);
+            this.Controls.Add(this.label8);
+            this.Controls.Add(this.profondità);
+            this.Controls.Add(this.chartProfondita);
+            this.Controls.Add(this.chartMagnitudo);
             this.Controls.Add(this.buttonMagnitudoFilter);
             this.Controls.Add(this.textBoxMagnitudo);
             this.Controls.Add(this.label5);
@@ -248,6 +365,8 @@
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartMagnitudo)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chartProfondita)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -272,6 +391,11 @@
         private System.Windows.Forms.Button buttonMagnitudoFilter;
         private System.Windows.Forms.TextBox textBoxMagnitudo;
         private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartMagnitudo;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chartProfondita;
+        private System.Windows.Forms.Label profondità;
+        private System.Windows.Forms.Label label8;
+        private System.Windows.Forms.Button buttonMostraGrafici;
     }
 }
 
