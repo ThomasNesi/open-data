@@ -34,6 +34,7 @@ namespace open_data
             textBoxMagnitudo.Visible = false;
             buttonMagnitudoFilter.Visible = false;
             dataGridView1.Visible = false;
+            buttonMostraGrafici.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -51,6 +52,7 @@ namespace open_data
             label5.Visible= !label5.Visible;
             textBoxMagnitudo.Visible= !textBoxMagnitudo.Visible;
             buttonMagnitudoFilter.Visible= !buttonMagnitudoFilter.Visible;
+            buttonMostraGrafici.Visible = !buttonMostraGrafici.Visible;
 
 
             // Cambia il testo del pulsante in base allo stato di visibilità del pannello

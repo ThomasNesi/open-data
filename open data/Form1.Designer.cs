@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea7 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend7 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series7 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea8 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend8 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series8 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series1 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea2 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend2 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series2 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_Click = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -69,7 +69,7 @@
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
             this.dataGridView1.RowTemplate.Height = 24;
-            this.dataGridView1.Size = new System.Drawing.Size(885, 361);
+            this.dataGridView1.Size = new System.Drawing.Size(841, 361);
             this.dataGridView1.TabIndex = 0;
             // 
             // button_Click
@@ -262,17 +262,17 @@
             this.chartMagnitudo.BorderlineColor = System.Drawing.Color.LawnGreen;
             this.chartMagnitudo.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartMagnitudo.BorderlineWidth = 3;
-            chartArea7.Name = "ChartArea1";
-            this.chartMagnitudo.ChartAreas.Add(chartArea7);
-            legend7.Name = "Legend1";
-            this.chartMagnitudo.Legends.Add(legend7);
-            this.chartMagnitudo.Location = new System.Drawing.Point(1001, 84);
+            chartArea1.Name = "ChartArea1";
+            this.chartMagnitudo.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chartMagnitudo.Legends.Add(legend1);
+            this.chartMagnitudo.Location = new System.Drawing.Point(967, 84);
             this.chartMagnitudo.Name = "chartMagnitudo";
-            series7.ChartArea = "ChartArea1";
-            series7.Legend = "Legend1";
-            series7.Name = "Series1";
-            this.chartMagnitudo.Series.Add(series7);
-            this.chartMagnitudo.Size = new System.Drawing.Size(585, 323);
+            series1.ChartArea = "ChartArea1";
+            series1.Legend = "Legend1";
+            series1.Name = "Series1";
+            this.chartMagnitudo.Series.Add(series1);
+            this.chartMagnitudo.Size = new System.Drawing.Size(619, 323);
             this.chartMagnitudo.TabIndex = 21;
             this.chartMagnitudo.Text = "chart1";
             // 
@@ -281,17 +281,17 @@
             this.chartProfondita.BorderlineColor = System.Drawing.Color.LawnGreen;
             this.chartProfondita.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartProfondita.BorderlineWidth = 3;
-            chartArea8.Name = "ChartArea1";
-            this.chartProfondita.ChartAreas.Add(chartArea8);
-            legend8.Name = "Legend1";
-            this.chartProfondita.Legends.Add(legend8);
-            this.chartProfondita.Location = new System.Drawing.Point(1001, 499);
+            chartArea2.Name = "ChartArea1";
+            this.chartProfondita.ChartAreas.Add(chartArea2);
+            legend2.Name = "Legend1";
+            this.chartProfondita.Legends.Add(legend2);
+            this.chartProfondita.Location = new System.Drawing.Point(967, 499);
             this.chartProfondita.Name = "chartProfondita";
-            series8.ChartArea = "ChartArea1";
-            series8.Legend = "Legend1";
-            series8.Name = "Series1";
-            this.chartProfondita.Series.Add(series8);
-            this.chartProfondita.Size = new System.Drawing.Size(585, 323);
+            series2.ChartArea = "ChartArea1";
+            series2.Legend = "Legend1";
+            series2.Name = "Series1";
+            this.chartProfondita.Series.Add(series2);
+            this.chartProfondita.Size = new System.Drawing.Size(619, 323);
             this.chartProfondita.TabIndex = 22;
             this.chartProfondita.Text = "chart2";
             // 
@@ -300,7 +300,7 @@
             this.profondità.AutoSize = true;
             this.profondità.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.profondità.ForeColor = System.Drawing.Color.ForestGreen;
-            this.profondità.Location = new System.Drawing.Point(1018, 478);
+            this.profondità.Location = new System.Drawing.Point(964, 469);
             this.profondità.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.profondità.Name = "profondità";
             this.profondità.Size = new System.Drawing.Size(77, 16);
@@ -312,7 +312,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label8.Location = new System.Drawing.Point(1018, 65);
+            this.label8.Location = new System.Drawing.Point(964, 59);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(79, 16);
@@ -323,7 +323,7 @@
             // 
             this.buttonMostraGrafici.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMostraGrafici.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonMostraGrafici.Location = new System.Drawing.Point(554, 633);
+            this.buttonMostraGrafici.Location = new System.Drawing.Point(554, 584);
             this.buttonMostraGrafici.Name = "buttonMostraGrafici";
             this.buttonMostraGrafici.Size = new System.Drawing.Size(107, 59);
             this.buttonMostraGrafici.TabIndex = 25;
