@@ -64,7 +64,7 @@
             // dataGridView1
             // 
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView1.Location = new System.Drawing.Point(61, 84);
+            this.dataGridView1.Location = new System.Drawing.Point(59, 141);
             this.dataGridView1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowHeadersWidth = 51;
@@ -76,7 +76,7 @@
             // 
             this.button_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button_Click.ForeColor = System.Drawing.Color.ForestGreen;
-            this.button_Click.Location = new System.Drawing.Point(554, 478);
+            this.button_Click.Location = new System.Drawing.Point(518, 48);
             this.button_Click.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.button_Click.Name = "button_Click";
             this.button_Click.Size = new System.Drawing.Size(107, 59);
@@ -90,7 +90,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label1.Location = new System.Drawing.Point(299, 555);
+            this.label1.Location = new System.Drawing.Point(299, 598);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(77, 16);
             this.label1.TabIndex = 2;
@@ -98,7 +98,7 @@
             // 
             // textBoxDepth
             // 
-            this.textBoxDepth.Location = new System.Drawing.Point(302, 584);
+            this.textBoxDepth.Location = new System.Drawing.Point(302, 627);
             this.textBoxDepth.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxDepth.Name = "textBoxDepth";
             this.textBoxDepth.Size = new System.Drawing.Size(100, 22);
@@ -108,7 +108,7 @@
             // 
             this.buttonFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonFilter.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonFilter.Location = new System.Drawing.Point(302, 622);
+            this.buttonFilter.Location = new System.Drawing.Point(302, 665);
             this.buttonFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonFilter.Name = "buttonFilter";
             this.buttonFilter.Size = new System.Drawing.Size(75, 23);
@@ -136,7 +136,7 @@
             this.dateTimePicker1.CalendarTitleForeColor = System.Drawing.Color.ForestGreen;
             this.dateTimePicker1.CalendarTrailingForeColor = System.Drawing.Color.ForestGreen;
             this.dateTimePicker1.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.dateTimePicker1.Location = new System.Drawing.Point(59, 584);
+            this.dateTimePicker1.Location = new System.Drawing.Point(59, 627);
             this.dateTimePicker1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.dateTimePicker1.MaxDate = new System.DateTime(2020, 12, 31, 0, 0, 0, 0);
             this.dateTimePicker1.MinDate = new System.DateTime(1985, 1, 1, 0, 0, 0, 0);
@@ -149,7 +149,7 @@
             // 
             this.data_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.data_btn.ForeColor = System.Drawing.Color.ForestGreen;
-            this.data_btn.Location = new System.Drawing.Point(62, 622);
+            this.data_btn.Location = new System.Drawing.Point(62, 665);
             this.data_btn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.data_btn.Name = "data_btn";
             this.data_btn.Size = new System.Drawing.Size(75, 23);
@@ -163,7 +163,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label4.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label4.Location = new System.Drawing.Point(59, 555);
+            this.label4.Location = new System.Drawing.Point(59, 598);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(38, 16);
             this.label4.TabIndex = 9;
@@ -174,7 +174,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label6.Location = new System.Drawing.Point(668, 487);
+            this.label6.Location = new System.Drawing.Point(632, 57);
             this.label6.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(119, 32);
@@ -185,7 +185,7 @@
             // 
             this.btnMostraFiltri_Click.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnMostraFiltri_Click.ForeColor = System.Drawing.Color.ForestGreen;
-            this.btnMostraFiltri_Click.Location = new System.Drawing.Point(61, 478);
+            this.btnMostraFiltri_Click.Location = new System.Drawing.Point(61, 521);
             this.btnMostraFiltri_Click.Name = "btnMostraFiltri_Click";
             this.btnMostraFiltri_Click.Size = new System.Drawing.Size(341, 59);
             this.btnMostraFiltri_Click.TabIndex = 14;
@@ -197,7 +197,7 @@
             // 
             this.buttonZonaFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonZonaFilter.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonZonaFilter.Location = new System.Drawing.Point(62, 743);
+            this.buttonZonaFilter.Location = new System.Drawing.Point(62, 786);
             this.buttonZonaFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonZonaFilter.Name = "buttonZonaFilter";
             this.buttonZonaFilter.Size = new System.Drawing.Size(75, 23);
@@ -208,7 +208,7 @@
             // 
             // textBoxZona
             // 
-            this.textBoxZona.Location = new System.Drawing.Point(62, 705);
+            this.textBoxZona.Location = new System.Drawing.Point(62, 748);
             this.textBoxZona.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxZona.Name = "textBoxZona";
             this.textBoxZona.Size = new System.Drawing.Size(100, 22);
@@ -219,7 +219,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label3.Location = new System.Drawing.Point(59, 676);
+            this.label3.Location = new System.Drawing.Point(59, 719);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(40, 16);
             this.label3.TabIndex = 15;
@@ -229,7 +229,7 @@
             // 
             this.buttonMagnitudoFilter.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMagnitudoFilter.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonMagnitudoFilter.Location = new System.Drawing.Point(302, 743);
+            this.buttonMagnitudoFilter.Location = new System.Drawing.Point(302, 786);
             this.buttonMagnitudoFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.buttonMagnitudoFilter.Name = "buttonMagnitudoFilter";
             this.buttonMagnitudoFilter.Size = new System.Drawing.Size(75, 23);
@@ -240,7 +240,7 @@
             // 
             // textBoxMagnitudo
             // 
-            this.textBoxMagnitudo.Location = new System.Drawing.Point(302, 705);
+            this.textBoxMagnitudo.Location = new System.Drawing.Point(302, 748);
             this.textBoxMagnitudo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.textBoxMagnitudo.Name = "textBoxMagnitudo";
             this.textBoxMagnitudo.Size = new System.Drawing.Size(100, 22);
@@ -251,7 +251,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 7.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label5.Location = new System.Drawing.Point(299, 676);
+            this.label5.Location = new System.Drawing.Point(299, 719);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(79, 16);
             this.label5.TabIndex = 18;

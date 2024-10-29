@@ -35,6 +35,10 @@ namespace open_data
             buttonMagnitudoFilter.Visible = false;
             dataGridView1.Visible = false;
             buttonMostraGrafici.Visible = false;
+            label8.Visible = false;
+            profondità.Visible = false;
+            chartMagnitudo.Visible = false;
+            chartProfondita.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -385,6 +389,11 @@ namespace open_data
         private void buttonMostraGrafici_Click_1(object sender, EventArgs e)
         {
             MostraGrafici();
+            label8.Visible = true;
+            profondità.Visible = true;
+            chartMagnitudo.Visible = true;
+            chartProfondita.Visible = true;
+
         }
 
 
