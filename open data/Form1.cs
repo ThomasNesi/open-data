@@ -45,14 +45,14 @@ namespace open_data
             {
                 using (StreamReader reader = new StreamReader(filePath))
                 {
-                    string headerLine = reader.ReadLine();
-                    if (headerLine == null)
+                    string primalinea = reader.ReadLine();
+                    if (primalinea == null)
                     {
-                        MessageBox.Show("Il file CSV è vuoto.");
+                        MessageBox.Show("Il file è vuoto.");
                         return;
                     }
 
-                    string[] headers = headerLine.Split(',');
+                    string[] headers = primalinea.Split(',');
 
                     foreach (string header in headers)
                     {
@@ -63,10 +63,10 @@ namespace open_data
 
                     while (!reader.EndOfStream)
                     {
-                        string line = reader.ReadLine();
-                        if (!string.IsNullOrWhiteSpace(line))
+                        string linea = reader.ReadLine();
+                        if (!string.IsNullOrWhiteSpace(linea))
                         {
-                            string[] righe = line.Split(',');
+                            string[] righe = linea.Split(',');
 
                             if (righe.Length == headers.Length)
                             {
@@ -169,7 +169,7 @@ namespace open_data
             }
             else
             {
-                MessageBox.Show("Inserisci un valore numerico valido per la profondità.");
+                MessageBox.Show("Inserisci un valore valido per la profondità.");
             }
         }
 
@@ -177,6 +177,11 @@ namespace open_data
         {
             DateTime selezionadata = dateTimePicker1.Value;
             FiltroData(selezionadata);
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
