@@ -30,6 +30,9 @@ namespace open_data
             label3.Visible = false;
             buttonZonaFilter.Visible = false;
             textBoxZona.Visible = false;
+            label5.Visible = false;
+            textBoxMagnitudo.Visible = false;
+            buttonMagnitudoFilter.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -44,6 +47,9 @@ namespace open_data
             label3.Visible = !label3.Visible;
             buttonZonaFilter.Visible= !buttonZonaFilter.Visible;
             textBoxZona.Visible= !textBoxZona.Visible;
+            label5.Visible= !label5.Visible;
+            textBoxMagnitudo.Visible= !textBoxMagnitudo.Visible;
+            buttonMagnitudoFilter.Visible= !buttonMagnitudoFilter.Visible;
 
 
             // Cambia il testo del pulsante in base allo stato di visibilità del pannello
@@ -110,7 +116,7 @@ namespace open_data
                         }
                     }
 
-                    MessageBox.Show($"Righe caricate: {contarighe}");
+                    MessageBox.Show($"Terremoti: {contarighe}");
 
                     // Inizializza filteredTable con tutti i dati
                     filteredTable = dataTable.Copy();
@@ -152,11 +158,11 @@ namespace open_data
             {
                 filteredTable = nuovoFiltro;
                 dataGridView1.DataSource = filteredTable;
-                MessageBox.Show($"Trovati {contafiltro} terremoti con la profondità specificata.");
+                MessageBox.Show($"Trovati {contafiltro} terremoti con questa profondità.");
             }
             else
             {
-                MessageBox.Show("Nessun terremoto trovato con la profondità specificata.");
+                MessageBox.Show("Nessun terremoto trovato con questa profondità.");
             }
         }
 
@@ -187,11 +193,11 @@ namespace open_data
             {
                 filteredTable = nuovoFiltro;
                 dataGridView1.DataSource = filteredTable;
-                MessageBox.Show($"Trovati {contafiltro} terremoti per la data specificata.");
+                MessageBox.Show($"Trovati {contafiltro} terremoti in questa data.");
             }
             else
             {
-                MessageBox.Show("Nessun terremoto trovato per la data specificata.");
+                MessageBox.Show("Nessun terremoto trovato in questa data.");
             }
         }
 
@@ -239,11 +245,11 @@ namespace open_data
             {
                 filteredTable = nuovoFiltro;
                 dataGridView1.DataSource = filteredTable;
-                MessageBox.Show($"Trovati {contafiltro} terremoti nella zona specificata.");
+                MessageBox.Show($"Trovati {contafiltro} terremoti.");
             }
             else
             {
-                MessageBox.Show("Nessun terremoto trovato per la zona specificata.");
+                MessageBox.Show("Nessun terremoto trovato per questa zona.");
             }
         }
 
@@ -257,7 +263,60 @@ namespace open_data
             }
             else
             {
-                MessageBox.Show("Inserisci una parola chiave per la zona.");
+                MessageBox.Show("Inserisci una parola per la zona.");
+            }
+        }
+
+        // Funzione di filtro magnitudo
+        private void FiltroMagnitudo(double magnitudoTarget)
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile da filtrare.");
+                return;
+            }
+
+            DataTable nuovoFiltro = filteredTable.Clone();
+            int contafiltro = 0;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string magnitudoString = riga[1].ToString().Trim(); // Magnitudo nella seconda colonna
+
+                string numeroStringa = new string(magnitudoString.Where(char.IsDigit).ToArray());
+
+                if (double.TryParse(numeroStringa, out double magnitudoRiga))
+                {
+                    if (magnitudoRiga == magnitudoTarget)
+                    {
+                        nuovoFiltro.ImportRow(riga);
+                        contafiltro++;
+                    }
+                }
+            }
+
+            if (contafiltro > 0)
+            {
+                filteredTable = nuovoFiltro;
+                dataGridView1.DataSource = filteredTable;
+                MessageBox.Show($"Trovati {contafiltro} terremoti con magnitudo {magnitudoTarget}.");
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con questo magnitudo.");
+            }
+        }
+
+        // Gestore per il pulsante di filtro
+        private void buttonMagnitudoFilter_Click_1(object sender, EventArgs e)
+        {
+            if (double.TryParse(textBoxMagnitudo.Text, out double magnitudo))
+            {
+                FiltroMagnitudo(magnitudo);
+            }
+            else
+            {
+                MessageBox.Show("Inserisci un valore valido per la magnitudo.");
             }
         }
 

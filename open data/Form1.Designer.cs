@@ -42,6 +42,9 @@
             this.buttonZonaFilter = new System.Windows.Forms.Button();
             this.textBoxZona = new System.Windows.Forms.TextBox();
             this.label3 = new System.Windows.Forms.Label();
+            this.buttonMagnitudoFilter = new System.Windows.Forms.Button();
+            this.textBoxMagnitudo = new System.Windows.Forms.TextBox();
+            this.label5 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             this.SuspendLayout();
             // 
@@ -188,12 +191,43 @@
             this.label3.TabIndex = 15;
             this.label3.Text = "zona";
             // 
+            // buttonMagnitudoFilter
+            // 
+            this.buttonMagnitudoFilter.Location = new System.Drawing.Point(302, 700);
+            this.buttonMagnitudoFilter.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.buttonMagnitudoFilter.Name = "buttonMagnitudoFilter";
+            this.buttonMagnitudoFilter.Size = new System.Drawing.Size(75, 23);
+            this.buttonMagnitudoFilter.TabIndex = 20;
+            this.buttonMagnitudoFilter.Text = "filtra";
+            this.buttonMagnitudoFilter.UseVisualStyleBackColor = true;
+            this.buttonMagnitudoFilter.Click += new System.EventHandler(this.buttonMagnitudoFilter_Click_1);
+            // 
+            // textBoxMagnitudo
+            // 
+            this.textBoxMagnitudo.Location = new System.Drawing.Point(302, 662);
+            this.textBoxMagnitudo.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.textBoxMagnitudo.Name = "textBoxMagnitudo";
+            this.textBoxMagnitudo.Size = new System.Drawing.Size(100, 22);
+            this.textBoxMagnitudo.TabIndex = 19;
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(299, 633);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(70, 16);
+            this.label5.TabIndex = 18;
+            this.label5.Text = "magnitudo";
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::open_data.Properties.Resources.Immagine_2024_10_29_164639;
             this.ClientSize = new System.Drawing.Size(1555, 802);
+            this.Controls.Add(this.buttonMagnitudoFilter);
+            this.Controls.Add(this.textBoxMagnitudo);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.buttonZonaFilter);
             this.Controls.Add(this.textBoxZona);
             this.Controls.Add(this.label3);
@@ -235,6 +269,9 @@
         private System.Windows.Forms.Button buttonZonaFilter;
         private System.Windows.Forms.TextBox textBoxZona;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.Button buttonMagnitudoFilter;
+        private System.Windows.Forms.TextBox textBoxMagnitudo;
+        private System.Windows.Forms.Label label5;
     }
 }
 
