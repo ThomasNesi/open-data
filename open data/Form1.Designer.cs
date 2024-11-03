@@ -56,6 +56,7 @@
             this.profondità = new System.Windows.Forms.Label();
             this.label8 = new System.Windows.Forms.Label();
             this.buttonMostraGrafici = new System.Windows.Forms.Button();
+            this.graficoprofondità_btn = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMagnitudo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProfondita)).BeginInit();
@@ -305,9 +306,9 @@
             this.profondità.Location = new System.Drawing.Point(964, 469);
             this.profondità.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.profondità.Name = "profondità";
-            this.profondità.Size = new System.Drawing.Size(77, 16);
+            this.profondità.Size = new System.Drawing.Size(131, 16);
             this.profondità.TabIndex = 23;
-            this.profondità.Text = "profondità";
+            this.profondità.Text = "Grafico profondità";
             // 
             // label8
             // 
@@ -317,21 +318,33 @@
             this.label8.Location = new System.Drawing.Point(964, 59);
             this.label8.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(79, 16);
+            this.label8.Size = new System.Drawing.Size(133, 16);
             this.label8.TabIndex = 24;
-            this.label8.Text = "magnitudo";
+            this.label8.Text = "Grafico magnitudo";
             // 
             // buttonMostraGrafici
             // 
             this.buttonMostraGrafici.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.buttonMostraGrafici.ForeColor = System.Drawing.Color.ForestGreen;
-            this.buttonMostraGrafici.Location = new System.Drawing.Point(554, 584);
+            this.buttonMostraGrafici.Location = new System.Drawing.Point(480, 521);
             this.buttonMostraGrafici.Name = "buttonMostraGrafici";
-            this.buttonMostraGrafici.Size = new System.Drawing.Size(107, 59);
+            this.buttonMostraGrafici.Size = new System.Drawing.Size(145, 59);
             this.buttonMostraGrafici.TabIndex = 25;
-            this.buttonMostraGrafici.Text = "grafici";
+            this.buttonMostraGrafici.Text = "grafico magnitudo";
             this.buttonMostraGrafici.UseVisualStyleBackColor = true;
             this.buttonMostraGrafici.Click += new System.EventHandler(this.buttonMostraGrafici_Click_1);
+            // 
+            // graficoprofondità_btn
+            // 
+            this.graficoprofondità_btn.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.graficoprofondità_btn.ForeColor = System.Drawing.Color.ForestGreen;
+            this.graficoprofondità_btn.Location = new System.Drawing.Point(635, 521);
+            this.graficoprofondità_btn.Name = "graficoprofondità_btn";
+            this.graficoprofondità_btn.Size = new System.Drawing.Size(136, 59);
+            this.graficoprofondità_btn.TabIndex = 26;
+            this.graficoprofondità_btn.Text = "grafico profondità";
+            this.graficoprofondità_btn.UseVisualStyleBackColor = true;
+            this.graficoprofondità_btn.Click += new System.EventHandler(this.graficoprofondità_btn_Click);
             // 
             // Form1
             // 
@@ -339,6 +352,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackgroundImage = global::open_data.Properties.Resources.Immagine_2024_10_29_164639;
             this.ClientSize = new System.Drawing.Size(1628, 850);
+            this.Controls.Add(this.graficoprofondità_btn);
             this.Controls.Add(this.buttonMostraGrafici);
             this.Controls.Add(this.label8);
             this.Controls.Add(this.profondità);
@@ -365,7 +379,6 @@
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Form1";
             this.Text = "Form1";
-            this.Load += new System.EventHandler(this.Form1_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMagnitudo)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProfondita)).EndInit();
@@ -398,6 +411,7 @@
         private System.Windows.Forms.Label profondità;
         private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button buttonMostraGrafici;
+        private System.Windows.Forms.Button graficoprofondità_btn;
     }
 }
 

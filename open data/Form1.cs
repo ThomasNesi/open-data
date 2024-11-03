@@ -35,6 +35,7 @@ namespace open_data
             buttonMagnitudoFilter.Visible = false;
             dataGridView1.Visible = false;
             buttonMostraGrafici.Visible = false;
+            graficoprofondità_btn.Visible = false;
             label8.Visible = false;
             profondità.Visible = false;
             chartMagnitudo.Visible = false;
@@ -57,6 +58,7 @@ namespace open_data
             textBoxMagnitudo.Visible= !textBoxMagnitudo.Visible;
             buttonMagnitudoFilter.Visible= !buttonMagnitudoFilter.Visible;
             buttonMostraGrafici.Visible = !buttonMostraGrafici.Visible;
+            graficoprofondità_btn.Visible = !graficoprofondità_btn.Visible;
 
 
             // Cambia il testo del pulsante in base allo stato di visibilità del pannello
@@ -128,7 +130,7 @@ namespace open_data
                         }
                     }
 
-                    MessageBox.Show($"Terremoti: {contarighe}");
+                    MessageBox.Show($"Terremoti trovati: {contarighe}");
 
                     // Inizializza filteredTable con tutti i dati
                     filteredTable = dataTable.Copy();
@@ -336,7 +338,7 @@ namespace open_data
         }
 
         // Funzione per visualizzare i grafici
-        private void MostraGrafici()
+        private void MostraGraficoMagnitudo()
         {
             if (filteredTable == null || filteredTable.Rows.Count == 0)
             {
@@ -345,14 +347,8 @@ namespace open_data
             }
 
             chartMagnitudo.Series.Clear();
-            chartProfondita.Series.Clear();
 
             Series serieMagnitudo = new Series("Magnitudo")
-            {
-                ChartType = SeriesChartType.Column
-            };
-
-            Series serieProfondita = new Series("Profondità")
             {
                 ChartType = SeriesChartType.Column
             };
@@ -369,6 +365,36 @@ namespace open_data
                     serieMagnitudo.Points.AddXY(indice, magnitudo);
                 }
 
+                indice++;
+            }
+
+            chartMagnitudo.Series.Add(serieMagnitudo);
+
+            chartMagnitudo.ChartAreas[0].AxisX.Title = "Indice Terremoto";
+            chartMagnitudo.ChartAreas[0].AxisY.Title = "Magnitudo";
+
+            chartMagnitudo.Visible = false;
+        }
+
+        private void MostraGraficoProfondità()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile per visualizzare i grafici.");
+                return;
+            }
+
+            chartProfondita.Series.Clear();
+
+            Series serieProfondita = new Series("Profondità")
+            {
+                ChartType = SeriesChartType.Column
+            };
+
+            int indice = 1;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
                 if (double.TryParse(riga[3].ToString().Trim(), out double profondita))
                 {
                     serieProfondita.Points.AddXY(indice, profondita);
@@ -376,29 +402,27 @@ namespace open_data
 
                 indice++;
             }
-
-            chartMagnitudo.Series.Add(serieMagnitudo);
             chartProfondita.Series.Add(serieProfondita);
 
-            chartMagnitudo.ChartAreas[0].AxisX.Title = "Indice Terremoto";
-            chartMagnitudo.ChartAreas[0].AxisY.Title = "Magnitudo";
             chartProfondita.ChartAreas[0].AxisX.Title = "Indice Terremoto";
             chartProfondita.ChartAreas[0].AxisY.Title = "Profondità (km)";
 
-            chartMagnitudo.Visible = false;
             chartProfondita.Visible = false;
         }
 
         // Gestore per il pulsante per visualizzare i grafici
         private void buttonMostraGrafici_Click_1(object sender, EventArgs e)
         {
-            MostraGrafici();
+            MostraGraficoMagnitudo();
+            chartMagnitudo.Visible = true;
+            label8.Visible = true;
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void graficoprofondità_btn_Click(object sender, EventArgs e)
         {
-
+            MostraGraficoProfondità();
+            chartProfondita.Visible = true;
+            profondità.Visible = true;
         }
     }
 }
