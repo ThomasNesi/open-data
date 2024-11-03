@@ -73,7 +73,7 @@ namespace open_data
         private void button_Click_Click_1(object sender, EventArgs e)
         {
             string filePath = "opendata1.csv";
-            dataGridView1.Visible = !dataGridView1.Visible;
+            dataGridView1.Visible = true;
 
             // Controllo se il file esiste
             if (!File.Exists(filePath))
@@ -83,6 +83,10 @@ namespace open_data
             }
 
             CaricaFile(filePath); // Carica il file CSV
+            chartMagnitudo.Visible = false;
+            chartProfondita.Visible = false; 
+            label8.Visible = false;
+            profondità.Visible = false;
         }
 
         private void CaricaFile(string filePath)
@@ -381,19 +385,14 @@ namespace open_data
             chartProfondita.ChartAreas[0].AxisX.Title = "Indice Terremoto";
             chartProfondita.ChartAreas[0].AxisY.Title = "Profondità (km)";
 
-            chartMagnitudo.Visible = true;
-            chartProfondita.Visible = true;
+            chartMagnitudo.Visible = false;
+            chartProfondita.Visible = false;
         }
 
         // Gestore per il pulsante per visualizzare i grafici
         private void buttonMostraGrafici_Click_1(object sender, EventArgs e)
         {
             MostraGrafici();
-            label8.Visible = true;
-            profondità.Visible = true;
-            chartMagnitudo.Visible = true;
-            chartProfondita.Visible = true;
-
         }
 
 
