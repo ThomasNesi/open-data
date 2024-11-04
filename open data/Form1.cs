@@ -438,7 +438,7 @@ namespace open_data
 
             string nomeColonna = dataGridView1.Columns[cella.ColumnIndex].HeaderText;
             string valoreCella = cella.Value?.ToString() ?? "N/A";
-            listBoxDetails.Items.Add(nomeColonna);
+            listBoxDetails.Items.Add($"{nomeColonna}:");
             listBoxDetails.Items.Add(valoreCella);
         }
 

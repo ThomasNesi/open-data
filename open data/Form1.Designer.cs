@@ -28,12 +28,12 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea3 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend3 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series3 = new System.Windows.Forms.DataVisualization.Charting.Series();
-            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea4 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
-            System.Windows.Forms.DataVisualization.Charting.Legend legend4 = new System.Windows.Forms.DataVisualization.Charting.Legend();
-            System.Windows.Forms.DataVisualization.Charting.Series series4 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea9 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend9 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series9 = new System.Windows.Forms.DataVisualization.Charting.Series();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea10 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend10 = new System.Windows.Forms.DataVisualization.Charting.Legend();
+            System.Windows.Forms.DataVisualization.Charting.Series series10 = new System.Windows.Forms.DataVisualization.Charting.Series();
             this.dataGridView1 = new System.Windows.Forms.DataGridView();
             this.button_Click = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
@@ -58,6 +58,7 @@
             this.buttonMostraGrafici = new System.Windows.Forms.Button();
             this.graficoprofondità_btn = new System.Windows.Forms.Button();
             this.listBoxDetails = new System.Windows.Forms.ListBox();
+            this.label7 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.dataGridView1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartMagnitudo)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.chartProfondita)).BeginInit();
@@ -266,17 +267,17 @@
             this.chartMagnitudo.BorderlineColor = System.Drawing.Color.LawnGreen;
             this.chartMagnitudo.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartMagnitudo.BorderlineWidth = 3;
-            chartArea3.Name = "ChartArea1";
-            this.chartMagnitudo.ChartAreas.Add(chartArea3);
-            legend3.Name = "Legend1";
-            this.chartMagnitudo.Legends.Add(legend3);
+            chartArea9.Name = "ChartArea1";
+            this.chartMagnitudo.ChartAreas.Add(chartArea9);
+            legend9.Name = "Legend1";
+            this.chartMagnitudo.Legends.Add(legend9);
             this.chartMagnitudo.Location = new System.Drawing.Point(1106, 128);
             this.chartMagnitudo.Name = "chartMagnitudo";
-            series3.ChartArea = "ChartArea1";
-            series3.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series3.Legend = "Legend1";
-            series3.Name = "Series1";
-            this.chartMagnitudo.Series.Add(series3);
+            series9.ChartArea = "ChartArea1";
+            series9.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series9.Legend = "Legend1";
+            series9.Name = "Series1";
+            this.chartMagnitudo.Series.Add(series9);
             this.chartMagnitudo.Size = new System.Drawing.Size(672, 362);
             this.chartMagnitudo.TabIndex = 21;
             this.chartMagnitudo.Text = "chart1";
@@ -286,17 +287,17 @@
             this.chartProfondita.BorderlineColor = System.Drawing.Color.LawnGreen;
             this.chartProfondita.BorderlineDashStyle = System.Windows.Forms.DataVisualization.Charting.ChartDashStyle.Solid;
             this.chartProfondita.BorderlineWidth = 3;
-            chartArea4.Name = "ChartArea1";
-            this.chartProfondita.ChartAreas.Add(chartArea4);
-            legend4.Name = "Legend1";
-            this.chartProfondita.Legends.Add(legend4);
+            chartArea10.Name = "ChartArea1";
+            this.chartProfondita.ChartAreas.Add(chartArea10);
+            legend10.Name = "Legend1";
+            this.chartProfondita.Legends.Add(legend10);
             this.chartProfondita.Location = new System.Drawing.Point(1106, 543);
             this.chartProfondita.Name = "chartProfondita";
-            series4.ChartArea = "ChartArea1";
-            series4.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
-            series4.Legend = "Legend1";
-            series4.Name = "Series1";
-            this.chartProfondita.Series.Add(series4);
+            series10.ChartArea = "ChartArea1";
+            series10.Color = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(192)))), ((int)(((byte)(0)))));
+            series10.Legend = "Legend1";
+            series10.Name = "Series1";
+            this.chartProfondita.Series.Add(series10);
             this.chartProfondita.Size = new System.Drawing.Size(672, 366);
             this.chartProfondita.TabIndex = 22;
             this.chartProfondita.Text = "chart2";
@@ -351,12 +352,26 @@
             // 
             // listBoxDetails
             // 
+            this.listBoxDetails.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.listBoxDetails.ForeColor = System.Drawing.Color.ForestGreen;
             this.listBoxDetails.FormattingEnabled = true;
-            this.listBoxDetails.ItemHeight = 16;
+            this.listBoxDetails.ItemHeight = 20;
             this.listBoxDetails.Location = new System.Drawing.Point(474, 825);
             this.listBoxDetails.Name = "listBoxDetails";
             this.listBoxDetails.Size = new System.Drawing.Size(516, 84);
             this.listBoxDetails.TabIndex = 27;
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label7.ForeColor = System.Drawing.Color.ForestGreen;
+            this.label7.Location = new System.Drawing.Point(470, 791);
+            this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(210, 20);
+            this.label7.TabIndex = 28;
+            this.label7.Text = "Visualizza dettagli cella";
             // 
             // Form1
             // 
@@ -366,6 +381,7 @@
             this.BackgroundImage = global::open_data.Properties.Resources._3ee52660_8376_4406_b363_ed11359d48f1;
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(1790, 999);
+            this.Controls.Add(this.label7);
             this.Controls.Add(this.listBoxDetails);
             this.Controls.Add(this.graficoprofondità_btn);
             this.Controls.Add(this.buttonMostraGrafici);
@@ -429,6 +445,7 @@
         private System.Windows.Forms.Button buttonMostraGrafici;
         private System.Windows.Forms.Button graficoprofondità_btn;
         private System.Windows.Forms.ListBox listBoxDetails;
+        private System.Windows.Forms.Label label7;
     }
 }
 
