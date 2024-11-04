@@ -63,6 +63,16 @@ namespace open_data.Properties {
         /// <summary>
         ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _3ee52660_8376_4406_b363_ed11359d48f1 {
+            get {
+                object obj = ResourceManager.GetObject("3ee52660-8376-4406-b363-ed11359d48f1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Cerca una risorsa localizzata di tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap images3 {
             get {
                 object obj = ResourceManager.GetObject("images3", resourceCulture);
