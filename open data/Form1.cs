@@ -46,6 +46,7 @@ namespace open_data
             chartMagnitudo.Visible = false;
             chartProfondita.Visible = false;
             listBoxDetails.Visible = false;
+            label7.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -450,6 +451,7 @@ namespace open_data
                 DataGridViewCell cellaSelezionata = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
                 MostraDettaglioCellaSelezionata(cellaSelezionata);
                 listBoxDetails.Visible = true;
+                label7.Visible = true;
             }
         }
 
