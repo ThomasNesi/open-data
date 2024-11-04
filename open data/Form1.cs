@@ -21,6 +21,11 @@ namespace open_data
         public Form1()
         {
             InitializeComponent();
+
+            // Associa l'evento di selezione della cella al DataGridView
+            dataGridView1.CellClick += dataGridView1_CellClick;
+
+
             label4.Visible = false;
             label1.Visible = false;
             dateTimePicker1.Visible = false;
@@ -40,6 +45,7 @@ namespace open_data
             profondità.Visible = false;
             chartMagnitudo.Visible = false;
             chartProfondita.Visible = false;
+            listBoxDetails.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -424,6 +430,29 @@ namespace open_data
             chartProfondita.Visible = true;
             profondità.Visible = true;
         }
+
+        // Metodo per popolare la ListBox con i dettagli della cella selezionata
+        private void MostraDettaglioCellaSelezionata(DataGridViewCell cella)
+        {
+            listBoxDetails.Items.Clear(); // Cancella i dati precedenti
+
+            string nomeColonna = dataGridView1.Columns[cella.ColumnIndex].HeaderText;
+            string valoreCella = cella.Value?.ToString() ?? "N/A";
+            listBoxDetails.Items.Add(nomeColonna);
+            listBoxDetails.Items.Add(valoreCella);
+        }
+
+        // Evento per la selezione della cella nel DataGridView
+        private void dataGridView1_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
+            {
+                DataGridViewCell cellaSelezionata = dataGridView1.Rows[e.RowIndex].Cells[e.ColumnIndex];
+                MostraDettaglioCellaSelezionata(cellaSelezionata);
+                listBoxDetails.Visible = true;
+            }
+        }
+
 
         private void Form1_Load(object sender, EventArgs e)
         {
