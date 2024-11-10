@@ -583,7 +583,7 @@ namespace open_data
             }
 
             DataRow terremotoMaggiore = null;
-            double profonditàMassima = double.MinValue;
+            double profonditàMassima = 0;
 
             foreach (DataRow riga in filteredTable.Rows)
             {
@@ -623,7 +623,7 @@ namespace open_data
             }
 
             DataRow terremotoMinore = null;
-            double profonditàMinima = double.MaxValue;
+            double profonditàMinima = 100000;
 
             foreach (DataRow riga in filteredTable.Rows)
             {

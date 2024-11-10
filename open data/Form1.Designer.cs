@@ -361,7 +361,7 @@
             this.listBoxDetails.ForeColor = System.Drawing.Color.ForestGreen;
             this.listBoxDetails.FormattingEnabled = true;
             this.listBoxDetails.ItemHeight = 20;
-            this.listBoxDetails.Location = new System.Drawing.Point(474, 845);
+            this.listBoxDetails.Location = new System.Drawing.Point(474, 859);
             this.listBoxDetails.Name = "listBoxDetails";
             this.listBoxDetails.Size = new System.Drawing.Size(516, 64);
             this.listBoxDetails.TabIndex = 27;
@@ -371,7 +371,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.ForestGreen;
-            this.label7.Location = new System.Drawing.Point(470, 807);
+            this.label7.Location = new System.Drawing.Point(470, 821);
             this.label7.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(210, 20);
