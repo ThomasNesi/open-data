@@ -453,7 +453,7 @@ namespace open_data
             listBoxDetails.Items.Clear(); // Cancella i dati precedenti
 
             string nomeColonna = dataGridView1.Columns[cella.ColumnIndex].HeaderText;
-            string valoreCella = cella.Value?.ToString() ?? "N/A";
+            string valoreCella = cella.Value.ToString();
             listBoxDetails.Items.Add($"{nomeColonna}:");
             listBoxDetails.Items.Add(valoreCella);
         }
@@ -546,7 +546,7 @@ namespace open_data
                 string magnitudoString = riga[1].ToString().Trim();
 
                 // Estrai solo la parte numerica della magnitudo, ignorando il testo
-                string numeroStringa = ExtractMagnitudeNumber(magnitudoString);
+                string numeroStringa = ExtractNumeroMagnitudo(magnitudoString);
 
                 if (double.TryParse(numeroStringa, out double magnitudo))
                 {
@@ -598,7 +598,7 @@ namespace open_data
                 string profonditàString = riga[3].ToString().Trim();
 
                 // Estrai solo la parte numerica della magnitudo, ignorando il testo
-                string numeroStringa = ExtractMagnitudeNumber(profonditàString);
+                string numeroStringa = ExtractNumeroMagnitudo(profonditàString);
 
                 if (double.TryParse(numeroStringa, out double profondità))
                 {
