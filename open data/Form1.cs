@@ -345,7 +345,6 @@ namespace open_data
             }
         }
 
-        // Gestore per il pulsante di filtro
         private void buttonMagnitudoFilter_Click_1(object sender, EventArgs e)
         {
             if (double.TryParse(textBoxMagnitudo.Text, out double magnitudo))
@@ -359,7 +358,6 @@ namespace open_data
             textBoxMagnitudo.Clear();
         }
 
-        // Funzione per visualizzare i grafici
         private void MostraGraficoMagnitudo()
         {
             if (filteredTable == null || filteredTable.Rows.Count == 0)
@@ -470,12 +468,6 @@ namespace open_data
             }
         }
 
-
-        private void Form1_Load(object sender, EventArgs e)
-        {
-
-        }
-
         // Evento che viene attivato quando cambia la selezione nella ComboBox
         private void comboBoxMaggioreMinore_SelectedIndexChanged(object sender, EventArgs e)
         {
@@ -499,7 +491,7 @@ namespace open_data
             }
 
             DataRow terremotoMaggiore = null;
-            double magnitudoMassima = double.MinValue;
+            double magnitudoMassima = 0;
 
             foreach (DataRow riga in filteredTable.Rows)
             {
@@ -539,7 +531,7 @@ namespace open_data
             }
 
             DataRow terremotoMinore = null;
-            double magnitudoMinima = double.MaxValue;
+            double magnitudoMinima = 100;
 
             foreach (DataRow riga in filteredTable.Rows)
             {
