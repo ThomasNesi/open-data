@@ -24,6 +24,13 @@ namespace open_data
 
             // Associa l'evento di selezione della cella al DataGridView
             dataGridView1.CellClick += dataGridView1_CellClick;
+            // Inizializza la ComboBox per scegliere l'ordine di ordinamento
+            comboBoxMaggioreMinore.Items.AddRange(new string[] { "Maggiore", "Minore" });
+            // Aggiungi un gestore di eventi per quando cambia la selezione
+            comboBoxMaggioreMinore.SelectedIndexChanged += comboBoxMaggioreMinore_SelectedIndexChanged;
+
+            comboBoxMaggioreMinore1.Items.AddRange(new string[] { "Maggiore", "Minore" });
+            comboBoxMaggioreMinore1.SelectedIndexChanged += comboBoxMaggioreMinore1_SelectedIndexChanged;
 
 
             label4.Visible = false;
@@ -47,6 +54,10 @@ namespace open_data
             chartProfondita.Visible = false;
             listBoxDetails.Visible = false;
             label7.Visible = false;
+            comboBoxMaggioreMinore.Visible = false;
+            comboBoxMaggioreMinore1.Visible = false;
+            label9.Visible = false;
+            label10.Visible = false;
         }
 
         private void btnMostraFiltri_Click_Click(object sender, EventArgs e)
@@ -66,6 +77,10 @@ namespace open_data
             buttonMagnitudoFilter.Visible= !buttonMagnitudoFilter.Visible;
             buttonMostraGrafici.Visible = !buttonMostraGrafici.Visible;
             graficoprofondità_btn.Visible = !graficoprofondità_btn.Visible;
+            label10.Visible = !label10.Visible;
+            label9.Visible = !label9.Visible;
+            comboBoxMaggioreMinore.Visible = !comboBoxMaggioreMinore.Visible;
+            comboBoxMaggioreMinore1.Visible = !comboBoxMaggioreMinore1.Visible;
 
 
             // Cambia il testo del pulsante in base allo stato di visibilità del pannello
@@ -460,6 +475,203 @@ namespace open_data
         {
 
         }
+
+        // Evento che viene attivato quando cambia la selezione nella ComboBox
+        private void comboBoxMaggioreMinore_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string scelta = comboBoxMaggioreMinore.SelectedItem.ToString();
+            if (scelta == "Maggiore")
+            {
+                TrovaTerremotoConMagnitudoMaggiore();
+            }
+            else if (scelta == "Minore")
+            {
+                TrovaTerremotoConMagnitudoMinore();
+            }
+        }
+
+        private void TrovaTerremotoConMagnitudoMaggiore()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile.");
+                return;
+            }
+
+            DataRow terremotoMaggiore = null;
+            double magnitudoMassima = double.MinValue;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string magnitudoString = riga[1].ToString().Trim();
+
+                // Estrai solo la parte numerica della magnitudo, ignorando il testo
+                string numeroStringa = ExtractNumeroMagnitudo(magnitudoString);
+
+                if (double.TryParse(numeroStringa, out double magnitudo))
+                {
+                    if (magnitudo > magnitudoMassima)
+                    {
+                        magnitudoMassima = magnitudo;
+                        terremotoMaggiore = riga;
+                    }
+                }
+            }
+
+            if (terremotoMaggiore != null)
+            {
+                int indice = filteredTable.Rows.IndexOf(terremotoMaggiore);
+                dataGridView1.Rows[indice].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = indice; // Scorri alla riga selezionata
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con magnitudo valida.");
+            }
+        }
+
+        private void TrovaTerremotoConMagnitudoMinore()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile.");
+                return;
+            }
+
+            DataRow terremotoMinore = null;
+            double magnitudoMinima = double.MaxValue;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string magnitudoString = riga[1].ToString().Trim();
+
+                // Estrai solo la parte numerica della magnitudo, ignorando il testo
+                string numeroStringa = ExtractMagnitudeNumber(magnitudoString);
+
+                if (double.TryParse(numeroStringa, out double magnitudo))
+                {
+                    if (magnitudo < magnitudoMinima)
+                    {
+                        magnitudoMinima = magnitudo;
+                        terremotoMinore = riga;
+                    }
+                }
+            }
+
+            if (terremotoMinore != null)
+            {
+                int indice = filteredTable.Rows.IndexOf(terremotoMinore);
+                dataGridView1.Rows[indice].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = indice; // Scorri alla riga selezionata
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con magnitudo valida.");
+            }
+        }
+
+        private void comboBoxMaggioreMinore1_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            string scelta = comboBoxMaggioreMinore1.SelectedItem.ToString();
+            if (scelta == "Maggiore")
+            {
+                TrovaTerremotoConProfonditàMaggiore();
+            }
+            else if (scelta == "Minore")
+            {
+                TrovaTerremotoConProfonditàMinore();
+            }
+        }
+        private void TrovaTerremotoConProfonditàMaggiore()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile.");
+                return;
+            }
+
+            DataRow terremotoMaggiore = null;
+            double profonditàMassima = double.MinValue;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string profonditàString = riga[3].ToString().Trim();
+
+                // Estrai solo la parte numerica della magnitudo, ignorando il testo
+                string numeroStringa = ExtractMagnitudeNumber(profonditàString);
+
+                if (double.TryParse(numeroStringa, out double profondità))
+                {
+                    if (profondità > profonditàMassima)
+                    {
+                        profonditàMassima = profondità;
+                        terremotoMaggiore = riga;
+                    }
+                }
+            }
+
+            if (terremotoMaggiore != null)
+            {
+                int indice = filteredTable.Rows.IndexOf(terremotoMaggiore);
+                dataGridView1.Rows[indice].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = indice; // Scorri alla riga selezionata
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con magnitudo valida.");
+            }
+        }
+
+        private void TrovaTerremotoConProfonditàMinore()
+        {
+            if (filteredTable == null || filteredTable.Rows.Count == 0)
+            {
+                MessageBox.Show("Nessun dato disponibile.");
+                return;
+            }
+
+            DataRow terremotoMinore = null;
+            double profonditàMinima = double.MaxValue;
+
+            foreach (DataRow riga in filteredTable.Rows)
+            {
+                string profonditàString = riga[3].ToString().Trim();
+
+                // Estrai solo la parte numerica della magnitudo, ignorando il testo
+                string numeroStringa = ExtractNumeroMagnitudo(profonditàString);
+
+                if (double.TryParse(numeroStringa, out double magnitudo))
+                {
+                    if (magnitudo < profonditàMinima)
+                    {
+                        profonditàMinima = magnitudo;
+                        terremotoMinore = riga;
+                    }
+                }
+            }
+
+            if (terremotoMinore != null)
+            {
+                int indice = filteredTable.Rows.IndexOf(terremotoMinore);
+                dataGridView1.Rows[indice].Selected = true;
+                dataGridView1.FirstDisplayedScrollingRowIndex = indice; // Scorri alla riga selezionata
+            }
+            else
+            {
+                MessageBox.Show("Nessun terremoto trovato con magnitudo valida.");
+            }
+        }
+
+        // Funzione per estrarre solo la parte numerica della magnitudo
+        private string ExtractNumeroMagnitudo(string Stringa)
+        {
+            // Usa una regular expression per estrarre solo i numeri e il punto decimale
+            var match = System.Text.RegularExpressions.Regex.Match(Stringa, @"-?\d+(\.\d+)?");
+
+            // Se la regular expression trova una corrispondenza, restituisce il numero
+            return match.Success ? match.Value : "0"; // Se non trova numeri, restituisce "0"
+        }
+
     }
 }
 
